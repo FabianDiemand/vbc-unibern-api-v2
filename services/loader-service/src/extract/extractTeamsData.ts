@@ -46,7 +46,7 @@ export function extractTeamsData(games: Game[], clubName: string): TeamSchema[] 
 }
 
 function isClubTeam(clubName: string, teamName: string): boolean {
-    return teamName.toLowerCase().startsWith(clubName.toLowerCase());
+    return teamName.toLowerCase().includes(clubName.toLowerCase());
 }
 
 function getTeamData(game: Game, team: Team): TeamSchema {
