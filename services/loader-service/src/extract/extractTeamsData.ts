@@ -31,8 +31,8 @@ export function extractTeamsData(games: Game[], clubName: string): TeamSchema[] 
     const dedupTeamData = new Map<number, TeamSchema>()
 
     games.forEach(game => {
-        const homeTeamMatch = isClubTeam(clubName, game.teams.home.caption)
-        const awayTeamMatch = isClubTeam(clubName, game.teams.away.caption)
+        const homeTeamMatch = isClubTeam(clubName, game.teams.home.clubCaption)
+        const awayTeamMatch = isClubTeam(clubName, game.teams.away.clubCaption)
 
         // Ignore cases, where none of the teams is an actual club team (e.g., club associated RTS team plays other non-club team)
         if (!homeTeamMatch && !awayTeamMatch) return
